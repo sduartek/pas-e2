@@ -1,9 +1,15 @@
-package sergio.krautheim.acmegames;
+package sergio.krautheim.acmegames.Entidade;
 
-public class Empresarial extends ClienteJPA {
+public class Empresarial extends Cliente {
 
     private String CNPJ;
     private String nomeFantasia;
+
+    public Empresarial(Long id, int numero, String nome, String endereco, String nomeFantasia, String CNPJ) {
+        super(id, numero, nome, endereco);
+        this.nomeFantasia = nomeFantasia;
+        this.CNPJ = CNPJ;
+    }
 
     public String getCNPJ() {
         return CNPJ;

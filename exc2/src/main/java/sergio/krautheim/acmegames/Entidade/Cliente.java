@@ -1,15 +1,25 @@
-package sergio.krautheim.acmegames;
+package sergio.krautheim.acmegames.Entidade;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public abstract class ClienteJPA {
+public abstract class Cliente {
 
     @Id
+    private Long id;
     private int numero;
     private String nome;
     private String endereco;
+
+    protected Cliente() {
+    }
+
+    public Cliente(Long id, int numero, String nome, String endereco) {
+        this.numero = numero;
+        this.nome = nome;
+        this.endereco = endereco;
+    }
 
     public int getNumero() {
         return numero;
@@ -23,16 +33,8 @@ public abstract class ClienteJPA {
         return endereco;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public Long getId() {
+        return id;
     }
 
 }

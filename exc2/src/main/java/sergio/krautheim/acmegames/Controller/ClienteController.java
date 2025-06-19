@@ -1,10 +1,13 @@
-package sergio.krautheim.acmegames;
+package sergio.krautheim.acmegames.Controller;
 
-import org.springframework.http.ResponseEntity;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import sergio.krautheim.acmegames.Entidade.Cliente;
+import sergio.krautheim.acmegames.Service.ClienteService;
 
 @RestController
 @RequestMapping("/acmegames/cadastro")
@@ -17,12 +20,7 @@ public class ClienteController {
     }
 
     @GetMapping("/listaclientes")
-    public ResponseEntity<List<ClienteDto>> listAllClientes() {
-        List<ClienteDto> lista = service.listarTodos();
-        if (lista.isEmpty()) {
-
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(lista);
+    public List<Cliente> getAllClientes() {
+        return service.getAllClientes();
     }
 }
