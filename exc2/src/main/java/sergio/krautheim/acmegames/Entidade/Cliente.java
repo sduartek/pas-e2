@@ -16,6 +16,7 @@ public abstract class Cliente {
     }
 
     public Cliente(Long id, int numero, String nome, String endereco) {
+        this.id = id;
         this.numero = numero;
         this.nome = nome;
         this.endereco = endereco;

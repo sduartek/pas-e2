@@ -7,6 +7,10 @@ public class Individual extends Cliente {
     
     private String CPF;
 
+    protected Individual() {
+        super(null, 0, null, null);
+    }
+
 
     public Individual(Long id, int numero, String nome, String endereco, String CPF) {
         super(id, numero, nome, endereco);
